@@ -13,8 +13,9 @@
     />
     <meta name="author" content="rashidyousufzai" />
     <script src="https://cdn.emailjs.com/sdk/2.6.4/email.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script> -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc-kuYmAAAAAPIjbJyNQV-BteCyPnIp1ekRCbnQ"></script>
 
     <title>Muhammad Rashid khan</title>
 
@@ -1233,7 +1234,7 @@
           <section class="contact-form">
             <h3 class="h3 form-title">Contact Form</h3>
 
-            <form action="#" class="form" data-form>
+            <form action="LOGIN" class="form" data-form>
               <div class="input-wrapper">
                 <input
                   type="text"
@@ -1280,8 +1281,18 @@
       </div>
     </main>
     <script>
-      function onSubmit(token) {
-        document.getElementById("demo-form").submit();
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.enterprise.ready(async () => {
+          const token = await grecaptcha.enterprise.execute(
+            "6Lc-kuYmAAAAAPIjbJyNQV-BteCyPnIp1ekRCbnQ",
+            { action: "LOGIN" }
+          );
+          // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
+          // reCAPTCHA Enterprise to the end user's browser.
+          // This token must be validated by creating an assessment.
+          // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+        });
       }
     </script>
     <!--
