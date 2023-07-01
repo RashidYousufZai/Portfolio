@@ -119,12 +119,12 @@ for (let i = 0; i < formInputs.length; i++) {
 }
 
 // Add event to form submit button
-formBtn.addEventListener("click", function (event) {
-  event.preventDefault(); // Prevent form submission
+// formBtn.addEventListener("click", function (event) {
+//   event.preventDefault(); // Prevent form submission
 
-  // Perform further actions here, such as sending the message or displaying a success message
-  alert("Message sent!"); // Example alert message
-});
+//   // Perform further actions here, such as sending the message or displaying a success message
+//   alert("Message sent!"); // Example alert message
+// });
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
