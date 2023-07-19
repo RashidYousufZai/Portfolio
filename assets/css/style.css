@@ -808,7 +808,9 @@ main {
 }
 
 .clients-item img {
-  width: 100%;
+  width: 100%; /* The image will take the full width of its container */
+  max-width: 100%; /* The image won't exceed its original size */
+  height: auto; /* The height will adjust automatically to maintain aspect ratio */
   filter: grayscale(1);
   transition: var(--transition-1);
 }
